@@ -1,6 +1,6 @@
 {
     "name": "image-resizer",
-    "displayName": "Image Resizer",
+    "displayName": "Image Resizer - Resize from the menu",
     "description": "Resize PNG, JPEG or BMP images from the explorer menu.",
     "version": "0.0.1",
     "publisher": "lukapetrovic",
@@ -12,12 +12,22 @@
     ],
     "keywords": [
 		"image",
-		"resize",
+        "resize",
+        "crop",
 		"edit",
 		"photo",
         "jpeg",
-        "png"
+        "png",
+        "bmp"
     ],
+	"icon": "images/imageresizer-icon.png",
+	"bugs": {
+		"url": "https://github.com/lukapetrovic/vscode-imageresizer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lukapetrovic/vscode-imageresizer"
+	},
     "activationEvents": [
         "onCommand:extension.resizeImage"
     ],
