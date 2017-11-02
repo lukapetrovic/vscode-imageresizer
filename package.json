@@ -1,0 +1,57 @@
+{
+    "name": "image-resizer",
+    "displayName": "Image Resizer",
+    "description": "Resize PNG, JPEG or BMP images from the explorer menu.",
+    "version": "0.0.1",
+    "publisher": "lukapetrovic",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+		"image",
+		"resize",
+		"edit",
+		"photo",
+        "jpeg",
+        "png"
+    ],
+    "activationEvents": [
+        "onCommand:extension.resizeImage"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.resizeImage",
+                "title": "☰ Resize Image"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.resizeImage",
+                    "group": "navigation@2"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.5.3",
+        "vscode": "^1.1.5",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "jimp": "^0.2.28"
+    }
+}
