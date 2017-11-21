@@ -2,6 +2,10 @@
 
 Resize Image from the explorer menu.
 
+## Installation
+
+In quick open (ctrl/cmd + P), run: `ext install lukapetrovic.image-resizer`, or see it in the marketplace [here](https://marketplace.visualstudio.com/items?itemName=lukapetrovic.image-resizer).
+
 ## Features
 
 Resize format: width[x]height
