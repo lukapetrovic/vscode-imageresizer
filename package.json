@@ -62,6 +62,6 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "jimp": "^0.2.28"
+        "jimp": "^0.6.0"
     }
 }

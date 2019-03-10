@@ -23,11 +23,11 @@ export function activate(context: vscode.ExtensionContext) {
           jimp
             .read(filePath.fsPath)
             .then(function (image) {
+              // if one of the dimentions is set to "auto" it'll be auto scaled. 
+              var width = resizeDimensions[0].toLowerCase() == 'auto' ? jimp.AUTO : Number.parseInt(resizeDimensions[0]);
+              var height = resizeDimensions[1].toLowerCase() == 'auto' ? jimp.AUTO : Number.parseInt(resizeDimensions[1]);
               image
-                .resize(
-                Number.parseInt(resizeDimensions[0]),
-                Number.parseInt(resizeDimensions[1])
-                )
+                .resize(width, height)
                 .write(resizedImageLocationParts[0] + "-" + widthXheight + "." + resizedImageLocationParts[1], (error, image) => {
                   if (error === null) {
                     vscode.window.showInformationMessage("Image resized");
