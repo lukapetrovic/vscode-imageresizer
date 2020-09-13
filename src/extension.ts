@@ -19,11 +19,11 @@ export function activate(context: vscode.ExtensionContext) {
             "Input not of format: width[x]height"
           );
         } else {
-          let resizedImageLocationParts = filePath.fsPath.split(".");
+          let resizedImageLocationParts = filePath.fsPath.split(/(?:\.)([^\/]*)$/g);
           jimp
             .read(filePath.fsPath)
             .then(function (image) {
-              // if one of the dimentions is set to "auto" it'll be auto scaled. 
+              // if one of the dimentions is set to "auto" it'll be auto scaled.
               var width = resizeDimensions[0].toLowerCase() == 'auto' ? jimp.AUTO : Number.parseInt(resizeDimensions[0]);
               var height = resizeDimensions[1].toLowerCase() == 'auto' ? jimp.AUTO : Number.parseInt(resizeDimensions[1]);
               image
